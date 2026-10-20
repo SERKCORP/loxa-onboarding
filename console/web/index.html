@@ -1,0 +1,57 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loxa · Partner Onboarding Console</title>
+<link rel="stylesheet" href="app.css"></head><body>
+<div class="shell">
+<aside>
+  <div class="logo"><svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="13" fill="none" stroke="#C9A227" stroke-width="3"/><path d="M15 6v9l6 4" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+    <div>Loxa<small>Partner onboarding</small></div></div>
+  <nav class="nav" id="nav">
+    <button data-view="snapshot" id="nav-snapshot" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Snapshot</button>
+    <button data-view="a1" id="nav-a1" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Agent 1 · Catalogue</button>
+    <button data-view="a2" id="nav-a2" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h10M4 17h6"/><circle cx="18" cy="16" r="3"/></svg>Agent 2 · Integration</button>
+    <button data-view="ask" id="nav-ask" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5h14v10H9l-4 4z"/></svg>Ask the agents</button>
+    <button data-view="problems" id="nav-problems"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg>Problems log<span class="count zero" id="pcount">0</span></button>
+  </nav>
+  <div class="side-sep"></div>
+  <a class="crm-btn" href="crm.html" id="crmbtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5"/><path d="M16 8h5M18.5 5.5v5"/></svg>Send to CRM</a>
+  <div class="side-foot">
+    <button class="crm-btn" id="runsbtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/><path d="M12 8v4l3 2"/></svg>Recent runs</button>
+    <div class="testpill" id="testpill"><span class="led"></span><span>Self-testing agents</span></div>
+  </div>
+</aside>
+<main>
+  <div class="top">
+    <form class="runbar" id="runform" autocomplete="off"><span>https://</span><input id="target" aria-label="Partner website" placeholder="partner website"><button class="btn gold" id="runbtn" type="submit">Run both agents</button></form>
+    <button class="btn ghost start" id="startbtn"><span class="ring"></span>Start here</button>
+  </div>
+  <div class="content">
+    <section id="v-landing">
+      <div class="landing">
+        <div>
+          <h1>Onboard a new partner in seconds, not two weeks.</h1>
+          <p class="lead">Enter a retailer's website. Two agents read it in parallel and build the onboarding snapshot.</p>
+          <div class="flow">
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><b>Enter a website</b><small>Any retailer, any platform</small></div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="#2F5BEA" stroke-width="2"><rect x="3" y="5" width="8" height="14" rx="2"/><rect x="13" y="5" width="8" height="14" rx="2"/></svg><b>Two agents run</b><small>Catalogue and integration</small></div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="#1F9D7A" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><b>Snapshot ready</b><small>Readiness, risks, next step</small></div>
+          </div>
+        </div>
+        <div id="hero-dial"></div>
+      </div>
+    </section>
+    <section id="v-live" class="hidden"></section>
+    <section id="v-snapshot" class="hidden"></section>
+    <section id="v-a1" class="hidden"></section>
+    <section id="v-a2" class="hidden"></section>
+    <section id="v-ask" class="hidden">
+      <div class="panel-h"><h2>Ask the agents</h2><button class="i" data-info="ask">i</button></div>
+      <form class="askbar" id="askform"><input id="question" placeholder="Ask about this partner, e.g. how many Rolex SKUs are in stock?"><button class="btn" type="submit">Ask</button></form>
+      <div id="examples"></div>
+      <div id="answers"></div>
+    </section>
+    <section id="v-problems" class="hidden"></section>
+  </div>
+</main>
+</div>
+<script src="answer.js"></script><script src="app.js"></script></body></html>

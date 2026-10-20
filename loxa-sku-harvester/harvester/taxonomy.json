@@ -1,0 +1,30 @@
+{
+  "_note": "Edit this file to adapt the agent to a new partner. No code changes needed.",
+  "category_synonyms": {
+    "watch": "Watches", "watches": "Watches", "mens watches": "Watches", "ladies watches": "Watches",
+    "womens watches": "Watches", "wristwatch": "Watches", "timepiece": "Watches", "timepieces": "Watches",
+    "pre-owned watches": "Pre-Owned Watches", "pre owned watches": "Pre-Owned Watches",
+    "certified pre-owned": "Pre-Owned Watches", "rolex certified pre-owned": "Pre-Owned Watches",
+    "engagement ring": "Engagement Rings", "engagement rings": "Engagement Rings",
+    "ring": "Jewellery", "rings": "Jewellery", "necklace": "Jewellery", "necklaces": "Jewellery",
+    "pendant": "Jewellery", "pendants": "Jewellery", "earring": "Jewellery", "earrings": "Jewellery",
+    "bracelet": "Jewellery", "bracelets": "Jewellery", "bangle": "Jewellery", "bangles": "Jewellery",
+    "jewelry": "Jewellery", "jewellery": "Jewellery", "fine jewellery": "Jewellery",
+    "wedding ring": "Jewellery", "wedding rings": "Jewellery", "cufflinks": "Accessories",
+    "strap": "Accessories", "straps": "Accessories", "gift card": "Gift Cards", "gift cards": "Gift Cards"
+  },
+  "brand_casing": {
+    "omega": "OMEGA", "tag heuer": "TAG Heuer", "iwc": "IWC", "iwc schaffhausen": "IWC",
+    "patek philippe": "Patek Philippe", "rolex": "Rolex", "tudor": "Tudor", "breitling": "Breitling",
+    "tissot": "Tissot", "gucci": "Gucci", "longines": "Longines", "cartier": "Cartier",
+    "michael spiers": "Michael Spiers"
+  },
+  "phases": [
+    {"name": "Phase 1 · Month 1", "rule": "brand", "match": ["tudor", "omega", "breitling", "tag heuer"],
+     "why": "Simplest claims; proven theft demand"},
+    {"name": "Phase 2 · Month 2", "rule": "brand", "match": ["rolex", "patek philippe"],
+     "why": "Highest value; needs documents on file"},
+    {"name": "Phase 3 · Month 3", "rule": "category", "match": ["jewellery", "engagement rings"],
+     "why": "Certificates and valuations"}
+  ]
+}

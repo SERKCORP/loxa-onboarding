@@ -1,0 +1,132 @@
+{
+  "domain": "michaelspiers.co.uk",
+  "base_url": "https://michaelspiers.co.uk",
+  "run_at": "2026-10-20 21:06",
+  "duration_seconds": 19.8,
+  "requests_made": 9,
+  "pages_read": {
+    "home": 200,
+    "cart": "blocked_by_robots",
+    "product_1": 200,
+    "product_2": 200,
+    "product_3": 200,
+    "collection": 200
+  },
+  "robots_found": true,
+  "platform": {
+    "name": "Shopify",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "signal": "cdn.shopify.com assets",
+        "source": "html"
+      },
+      {
+        "signal": "Shopify JavaScript object",
+        "source": "html"
+      }
+    ]
+  },
+  "gtm_containers": [
+    "GTM-KRDB3S8L",
+    "GTM-PQFZ6J6"
+  ],
+  "ga4_ids": [
+    "G-KRCN67Z9TQ"
+  ],
+  "widgets": {
+    "bnpl": [],
+    "trust": [
+      "Yotpo"
+    ],
+    "protection": [],
+    "payments": [
+      "Apple Pay",
+      "PayPal",
+      "Shop Pay"
+    ],
+    "consent": [],
+    "analytics": [
+      "Google Analytics 4",
+      "Klaviyo",
+      "Meta Pixel"
+    ]
+  },
+  "security": {
+    "HSTS": true,
+    "Content-Security-Policy": true,
+    "X-Frame-Options": true,
+    "CDN": "Cloudflare"
+  },
+  "checkout": {
+    "type": "Shopify hosted checkout",
+    "steps": "1 (one-page, Shopify default) or 3 (three-page, if switched)",
+    "steps_confidence": 0.6,
+    "steps_source": "inferred",
+    "steps_reference": "Shopify Help Center: one-page checkout is the default; merchants can switch to three-page",
+    "account_prompt_on_cart": null,
+    "checkout_disallowed_in_robots": true,
+    "customisable_checkout": "Only on Shopify Plus (checkout extensibility). Plan is not visible from outside."
+  },
+  "recommendation": {
+    "approach": "Loxa widget on product and cart pages first (theme app extension). Add a checkout step only if the store is on Shopify Plus.",
+    "reasoning": "Product and cart placement works on every Shopify plan. Checkout customisation is limited to Plus, and the plan cannot be seen from outside the site.",
+    "confidence": 0.75
+  },
+  "readiness": {
+    "score": 85,
+    "band": "Ready",
+    "effort": "Indicative: 1–3 days for a product and cart widget",
+    "deductions": [
+      "-5 no cookie consent tool detected, so tracking consent needs checking",
+      "-5 Shopify plan (Plus or not) must be confirmed",
+      "-5 checkout steps inferred, not observed"
+    ],
+    "method": "Loxa onboarding heuristic (own initiative). Starts at 100 and deducts for each risk found."
+  },
+  "risk_flags": [],
+  "human_review": [
+    "Confirm the Shopify plan. Checkout customisation needs Shopify Plus.",
+    "Confirm checkout steps with a test order in staging.",
+    "Post-payment and logged-in flows cannot be read from outside. Confirm with the partner.",
+    "https://michaelspiers.co.uk/cart is disallowed by robots.txt, so it was not read (respected)."
+  ],
+  "signals": [
+    {
+      "finding": "Platform: Shopify",
+      "evidence": "cdn.shopify.com assets",
+      "source": "html",
+      "confidence": 0.8
+    },
+    {
+      "finding": "Platform: Shopify",
+      "evidence": "Shopify JavaScript object",
+      "source": "html",
+      "confidence": 0.8
+    },
+    {
+      "finding": "GTM container GTM-KRDB3S8L",
+      "evidence": "container ID in page source",
+      "source": "html",
+      "confidence": 0.95
+    },
+    {
+      "finding": "GTM container GTM-PQFZ6J6",
+      "evidence": "container ID in page source",
+      "source": "html",
+      "confidence": 0.95
+    },
+    {
+      "finding": "Trust badge: Yotpo",
+      "evidence": "script or markup match",
+      "source": "html",
+      "confidence": 0.8
+    },
+    {
+      "finding": "Checkout steps: 1 (one-page, Shopify default) or 3 (three-page, if switched)",
+      "evidence": "Shopify Help Center: one-page checkout is the default; merchants can switch to three-page",
+      "source": "inferred",
+      "confidence": 0.6
+    }
+  ]
+}

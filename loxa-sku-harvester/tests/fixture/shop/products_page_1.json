@@ -1,0 +1,12 @@
+{"products": [
+ {"id": 1, "title": "Rolex Submariner Date", "handle": "rolex-submariner-date", "vendor": "ROLEX", "product_type": "watches",
+  "variants": [{"id": 11, "title": "Default Title", "sku": "126610LN", "price": "10250.00", "available": true}]},
+ {"id": 2, "title": "OMEGA Speedmaster Moonwatch", "handle": "omega-speedmaster", "vendor": "Omega", "product_type": "Mens Watches",
+  "variants": [{"id": 21, "title": "Steel bracelet", "sku": "310.30.42", "price": "6900.00", "available": true},
+               {"id": 22, "title": "Leather strap", "sku": "310.32.42", "price": "6500.00", "available": false}]},
+ {"id": 3, "title": "Patek Philippe Nautilus", "handle": "patek-nautilus", "vendor": "Patek Philippe", "product_type": "Watch",
+  "variants": [{"id": 31, "title": "Default Title", "sku": "5811/1G", "price": "0.00", "available": false}]},
+ {"id": 4, "title": "Diamond Solitaire Engagement Ring", "handle": "solitaire-ring", "vendor": "Michael Spiers", "product_type": "engagement rings",
+  "variants": [{"id": 41, "title": "Size L", "sku": "MS-SOL-L", "price": "6750.00", "available": true},
+               {"id": 42, "title": "Size N", "sku": "MS-SOL-N", "price": "6750.00", "available": true}]}
+]}

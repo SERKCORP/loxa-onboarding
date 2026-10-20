@@ -1,0 +1,22 @@
+{
+  "_note": "Wappalyzer-style signatures. Add a line here to detect a new tool; no code changes needed. Weights add up to a confidence score (max 1.0).",
+  "platforms": [
+    {"name": "Shopify", "signal": "cdn.shopify.com assets", "html": "cdn\\.shopify\\.com|shopifycdn", "weight": 0.5},
+    {"name": "Shopify", "signal": "Shopify JavaScript object", "html": "Shopify\\.(theme|shop|routes|locale)", "weight": 0.3},
+    {"name": "Shopify", "signal": "x-shopid / x-shopify-stage header", "header": "x-shopid|x-shopify-stage|x-sorting-hat-shopid", "weight": 0.4},
+    {"name": "Shopify", "signal": "public /products.json feed", "probe": "shopify_feed", "weight": 0.3},
+    {"name": "Magento", "signal": "Magento static paths or Mage objects", "html": "/static/version\\d+/|Mage\\.Cookies|mage-cache|data-mage-init", "weight": 0.6},
+    {"name": "BigCommerce", "signal": "BigCommerce asset host", "html": "cdn\\d*\\.bigcommerce\\.com|bigcommerce\\.com/s-", "weight": 0.6},
+    {"name": "WooCommerce", "signal": "WooCommerce plugin assets", "html": "wp-content/plugins/woocommerce", "weight": 0.6},
+    {"name": "Salesforce Commerce Cloud", "signal": "demandware paths", "html": "demandware\\.(static|store)|/on/demandware", "weight": 0.6},
+    {"name": "Wix", "signal": "Wix static assets", "html": "static\\.wixstatic\\.com", "weight": 0.6}
+  ],
+  "widgets": {
+    "bnpl": {"Klarna": "klarna", "Clearpay": "clearpay", "Afterpay": "afterpay", "PayPal Pay Later": "paypal[^\"']{0,40}(pay[- ]?later|messages|credit)", "Zilch": "zilch", "Laybuy": "laybuy", "Divido / V12 finance": "divido|v12finance|v12-finance", "Shop Pay Installments": "shop-pay-installments|shopify-installments"},
+    "trust": {"Trustpilot": "trustpilot", "Feefo": "feefo", "Reviews.io": "reviews\\.io|reviewsio", "Judge.me": "judge\\.me|judgeme", "Yotpo": "yotpo", "Okendo": "okendo"},
+    "protection": {"Extend": "extend\\.com|helloextend", "Corso": "corso\\.com", "SureBright": "surebright", "Mulberry": "getmulberry|mulberry\\.com", "Clyde": "joinclyde", "Assurant": "assurant", "Loxa": "loxacover|loxa"},
+    "payments": {"Apple Pay": "apple[- _]?pay", "Google Pay": "google[- _]?pay|gpay", "PayPal": "paypal", "Shop Pay": "shop[- _]?pay", "Amazon Pay": "amazon[- _]?pay"},
+    "consent": {"OneTrust": "onetrust|cookielaw\\.org", "Cookiebot": "cookiebot", "Shopify consent banner": "privacy-banner|customer-privacy", "Termly": "termly", "CookieYes": "cookieyes", "Iubenda": "iubenda"},
+    "analytics": {"Google Analytics 4": "gtag\\(|googletagmanager\\.com/gtag", "Meta Pixel": "fbevents\\.js|fbq\\(", "TikTok Pixel": "analytics\\.tiktok\\.com", "Hotjar": "hotjar", "Klaviyo": "klaviyo", "Microsoft Clarity": "clarity\\.ms"}
+  }
+}

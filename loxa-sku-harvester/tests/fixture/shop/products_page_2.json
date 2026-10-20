@@ -1,0 +1,8 @@
+{"products": [
+ {"id": 5, "title": "Tudor Black Bay 54", "handle": "tudor-bb54", "vendor": "TUDOR", "product_type": "Watches",
+  "variants": [{"id": 51, "title": "Default Title", "sku": "M79000N", "price": "3690.00", "available": true}]},
+ {"id": 6, "title": "Gucci Interlocking Pendant", "handle": "gucci-pendant", "vendor": "Gucci", "product_type": "Necklaces",
+  "variants": [{"id": 61, "title": "Default Title", "sku": "", "price": "450.00", "available": true}]},
+ {"id": 7, "title": "OMEGA Speedmaster duplicate listing", "handle": "omega-speedmaster-dup", "vendor": "Omega", "product_type": "Watches",
+  "variants": [{"id": 71, "title": "Default Title", "sku": "310.30.42", "price": "6900.00", "available": true}]}
+]}

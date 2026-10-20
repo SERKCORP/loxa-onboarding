@@ -1,0 +1,60 @@
+name: dashboard
+# Tests everything, runs both agents on GitHub's servers, publishes results, and deploys the dashboard to GitHub Pages.
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["published_runs/**"]
+  schedule:
+    - cron: "0 6 * * *"   # refresh every published partner daily at 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Partner website to run, e.g. michaelspiers.co.uk (leave blank to refresh all)"
+        required: false
+        default: ""
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: dashboard
+  cancel-in-progress: false
+jobs:
+  run-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r console/requirements.txt
+      - name: Test both agents and the console (offline test stores)
+        run: |
+          python loxa-sku-harvester/tests/run_tests.py
+          python loxa-integration-profiler/tests/run_tests.py
+          python console/tests/run_tests.py
+      - name: Run both agents live and publish the results
+        env:
+          URL: ${{ github.event.inputs.url }}
+        run: |
+          if [ -n "$URL" ]; then TARGETS="$URL"; else
+            TARGETS=$(python -c "import json,os;p='published_runs/index.json';d=json.load(open('console/config.json'))['default_url'];s=[r['target'] for r in json.load(open(p))] if os.path.exists(p) else [];print(' '.join(dict.fromkeys([d]+s)))"); fi
+          for T in $TARGETS; do python console/console.py --run "$T" --publish published_runs || echo "Run failed for $T"; done
+      - name: Save published runs to the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add published_runs
+          git commit -m "Publish agent runs [skip ci]" || echo "No changes"
+          git pull --rebase -X ours origin main || true
+          git push || echo "Push skipped"
+      - run: python console/tools/build_site.py --out site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

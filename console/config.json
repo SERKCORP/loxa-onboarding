@@ -1,0 +1,23 @@
+{
+  "agents": {
+    "harvester": {
+      "folder": "loxa-sku-harvester",
+      "module": "harvester.harvest",
+      "delay": 0.5,
+      "page_limit": 150
+    },
+    "profiler": {
+      "folder": "loxa-integration-profiler",
+      "module": "profiler.profile",
+      "delay": 0.5
+    }
+  },
+  "default_url": "michaelspiers.co.uk",
+  "ai_model": "claude-haiku-5-5",
+  "example_questions": [
+    "Which platform are they on, and how should Loxa integrate?",
+    "How many Rolex SKUs are in stock, and what is the median price?",
+    "Is there any competing protection or BNPL that could clash with our offer?"
+  ],
+  "github_repo": "SERKCORP/loxa-onboarding"
+}

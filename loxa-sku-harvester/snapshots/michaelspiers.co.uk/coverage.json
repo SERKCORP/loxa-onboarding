@@ -1,0 +1,21 @@
+{
+  "domain": "michaelspiers.co.uk",
+  "base_url": "https://michaelspiers.co.uk",
+  "run_at": "2026-10-20 21:08",
+  "strategy": "sitemap",
+  "robots_found": true,
+  "requests_made": 173,
+  "blocked_by_robots": 0,
+  "delay_seconds": 0.5,
+  "duration_seconds": 161.7,
+  "products": 150,
+  "skus": 208,
+  "sitemap_product_urls": 1843,
+  "duplicates_removed": 0,
+  "quick_scan_limit": 150,
+  "failed_pages": 0,
+  "needs_render": 0,
+  "missing_sku": 0,
+  "price_on_application": 0,
+  "median_price": 4700.0
+}

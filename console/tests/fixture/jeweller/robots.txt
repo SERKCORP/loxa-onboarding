@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://127.0.0.1:8799/jeweller/sitemap.xml
